@@ -1,8 +1,7 @@
 <?php
 
-use Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-use App\Http\COntrollers\AuthController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TaskController;
 
@@ -13,7 +12,7 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout']);
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing');
 });
 
 Route::middleware('auth.check')->group(function () {
