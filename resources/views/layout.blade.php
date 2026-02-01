@@ -13,14 +13,15 @@
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         line-height: 1.6;
-        background: #000000;
+        background: url('/images/background.jpg') no-repeat center center fixed;
+        background-size: cover;
         display: flex;
         flex-direction: column;
         min-height: 100vh;
         margin: 0;
     }
     nav {
-        background: #8B0000;
+        background: #4c2626;
         color: white;
         padding: 1rem 2rem;
         display: flex;
@@ -44,10 +45,14 @@
         max-width: 600px;
         margin: 2rem auto;
         padding: 2rem;
-        background: #808080;
+        /* background: #5c4e4e; */
+        background: url('/images/container.jpg') no-repeat center center fixed;
+        background-size: contain;
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         flex: 1;
+        /* make the contents and the container width just relative not stretched so much */
+        width: 90%;
     }
     h1, h2 {
         color: #fff;
@@ -109,12 +114,12 @@
         color: #fff;
     }
     .link a {
-        color: #3498db;
+        color: #cee5f6;
     }
     footer {
         text-align: center;
         padding: 1rem;
-        background: #8B0000;
+        background: #494040;
         color: white;
     }
     </style>

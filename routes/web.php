@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::middleware('auth.check')->group(function () {
 Route::get('/profile', [ProfileController::class, 'show']);
 Route::post('/profile', [ProfileController::class, 'update']);
+Route::post('/profile/image/remove', [ProfileController::class, 'removeImage']);
 });
 
 Route::middleware('auth.check')->group(function () {
