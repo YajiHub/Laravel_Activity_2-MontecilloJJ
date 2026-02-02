@@ -46,13 +46,11 @@
         max-width: 600px;
         margin: 2rem auto;
         padding: 2rem;
-        /* background: #5c4e4e; */
         background: url('/images/container.jpg') no-repeat center center fixed;
         background-size: contain;
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         flex: 1;
-        /* make the contents and the container width just relative not stretched so much */
         width: 90%;
     }
     h1, h2 {

@@ -23,4 +23,6 @@ Route::post('/profile/image/remove', [ProfileController::class, 'removeImage']);
 
 Route::middleware('auth.check')->group(function () {
 Route::resource('tasks', TaskController::class);
+Route::post('/tasks/{id}/done', [TaskController::class, 'done']);
+Route::post('/tasks/{id}/undone', [TaskController::class, 'undone']);
 });

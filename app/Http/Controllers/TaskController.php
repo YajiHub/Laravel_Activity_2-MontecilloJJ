@@ -23,7 +23,7 @@ class TaskController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'nullable',
-            'due_date' => 'nullable|date'
+            'due_date' => 'nullable|date|after_or_equal:today'
         ]);
 
         Task::create([
@@ -47,7 +47,7 @@ class TaskController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'nullable',
-            'due_date' => 'nullable|date'
+            'due_date' => 'nullable|date|after_or_equal:today'
         ]);
 
         $task = Task::where('id', $id)->where('user_id', Session::get('user_id'))->firstOrFail();
@@ -66,4 +66,19 @@ class TaskController extends Controller
 
         return redirect('/tasks')->with('success', 'Task deleted successfully');
     }
+    
+    public function done($id){
+        $task = Task::where('id', $id)->where('user_id', Session::get('user_id'))->firstOrFail();
+        $task->is_completed = true;
+        $task->save();
+        return redirect('tasks')->with('success', 'Task with title: '.$task->title.', is marked as done');
+    }
+
+    public function undone($id){
+        $task = Task::where('id', $id)->where('user_id', Session::get('user_id'))->firstOrFail();
+        $task->is_completed = false;
+        $task->save();
+        return redirect('tasks')->with('success', 'Task with title: '.$task->title.', is removed from done tasks');
+    }
+
 }

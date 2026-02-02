@@ -45,7 +45,6 @@
         <p style="color: #ccc; font-size: 0.8rem; margin-top: 0.5rem;">Max 2MB (JPEG, PNG, JPG, GIF)</p>
     </div>
 
-    <!-- Profile Details Form -->
     <form action="/profile" method="POST" enctype="multipart/form-data">
         @csrf
 
